@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class SuperHero {
 
     // Тут мають бути властивості і поведінка Супергероя
@@ -7,9 +9,22 @@ public class SuperHero {
     int deffencePower;
     int health =100;
     boolean isAlive = true;
+    String heroElement;
+
+    public Random random = new Random();
 
     public void attack(SuperHero opponent, int attackStrength) {
         System.out.println("SuperHero " + name + " attacks ");
+        int event = random.nextInt(3)+1;
+        if (event ==1) {
+            int bonusAttack = random.nextInt(6) +1;
+        System.out.println("SuperHero " + name + " recives bonus to the attack " + bonusAttack);
+        attackStrength += bonusAttack;
+        } else {
+            int bonusDefence;
+            bonusDefence = random.nextInt(6) + 1;
+         this.protectionUsed(bonusDefence);
+        }
         opponent.getDamaged(attackStrength);
     }
 
