@@ -23,7 +23,7 @@ public class SuperHero {
         } else {
             int bonusDefence;
             bonusDefence = random.nextInt(6) + 1;
-         this.protectionUsed(bonusDefence);
+         opponent.protectionUsed(bonusDefence);
         }
         opponent.getDamaged(attackStrength);
     }
