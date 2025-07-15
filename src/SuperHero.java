@@ -8,8 +8,7 @@ public class SuperHero {
     int attackPower;
     int deffencePower;
     int health =100;
-    boolean isAlive = true;
-    String heroElement;
+    boolean isAlive=true;
 
     public Random random = new Random();
 
@@ -30,20 +29,25 @@ public class SuperHero {
 
     public void getDamaged(int attackPower) {
         System.out.println("SuperHero " + name + " recives " + attackPower + " of damage ");
+        if (this.isAlive()) {
+            this.showStats();
+        } else { System.out.println("SuperHero " + name + " is dead. The game is over ");
+        }
         health -= attackPower;
     }
 
+    public boolean isAlive() {
+        return health >0;
+    }
+
+
     public void protectionUsed (int deffencePower) {
-        System.out.println(" SuperHero " + name + " revices " + deffencePower + " protection bonus ");
+        System.out.println("SuperHero " + name + " revices " + deffencePower + " protection bonus ");
         health +=deffencePower;
         }
 
 
-    public void isAlive(){
-        if (health <=0){
-            isAlive = false; /// how to end the game
-        }
-    }
+
     public void showStats(){
         System.out.println("SuperHero " + name + " has " + health + " points left " );
     }
