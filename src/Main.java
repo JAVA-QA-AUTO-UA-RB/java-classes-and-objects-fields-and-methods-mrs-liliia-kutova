@@ -12,29 +12,29 @@ public class Main {
         flash.deffencePower=10;
         flash.health=100;
         flash.isAlive=true;
-        flash.heroElement = "water";
 
         ironMan.name="ironMan";
         ironMan.attackPower=15;
         ironMan.deffencePower=5;
         ironMan.health=100;
         ironMan.isAlive=true;
-        ironMan.heroElement = "fire";
 
         jackieChan.name="Jackie";
         jackieChan.attackPower=15;
         jackieChan.deffencePower=10;
         jackieChan.health=100;
         jackieChan.isAlive=true;
-        jackieChan.heroElement = "air";
 
         System.out.println("Let's the game begin");
 
+        while (flash.isAlive() && ironMan.isAlive()){
         flash.attack(ironMan, 25);
+        if (!ironMan.isAlive()) break;
         ironMan.showStats();
-
         ironMan.attack(flash, 10);
+        if (!flash.isAlive()) break;
         flash.showStats();
+        }
 
 
 
