@@ -33,6 +33,9 @@ public class Main {
         flash.attack(ironMan, 25);
         ironMan.showStats();
 
+        ironMan.attack(flash, 10);
+        flash.showStats();
+
 
 
 //        while (flash.isAlive && ironMan.isAlive) {
