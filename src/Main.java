@@ -30,16 +30,21 @@ public class Main {
         while (flash.isAlive() && ironMan.isAlive()){
         flash.attack(ironMan, 25);
         if (!ironMan.isAlive()) break;
-        ironMan.showStats();
         ironMan.attack(flash, 10);
         if (!flash.isAlive()) break;
-        flash.showStats();
+        }
+        
+        System.out.println("Let's the game begin");
+        while (flash.isAlive() && jackieChan.isAlive()){
+            flash.attack(jackieChan, 15);
+            if (!jackieChan.isAlive()) break;
+            jackieChan.attack(flash, 25);
+            if (!flash.isAlive()) break;
         }
 
 
 
-//        while (flash.isAlive && ironMan.isAlive) {
-//            int attackStrength = //
-        }
+
+    }
     }
 
