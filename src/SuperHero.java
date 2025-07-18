@@ -29,11 +29,15 @@ public class SuperHero {
 
     public void getDamaged(int attackPower) {
         System.out.println("SuperHero " + name + " recives " + attackPower + " of damage ");
-        if (this.isAlive()) {
-            this.showStats();
-        } else { System.out.println("SuperHero " + name + " is dead. The game is over ");
-        }
         health -= attackPower;
+
+        if (health <=0) {
+            health =0;
+            isAlive = false;
+            System.out.println("SuperHero " + name + " is dead. The game is over ");
+        } else {
+            showStats();
+        }
     }
 
     public boolean isAlive() {
@@ -52,6 +56,5 @@ public class SuperHero {
         System.out.println("SuperHero " + name + " has " + health + " points left " );
     }
 
-//            System.out.println("SuperHero " + name + "is the winner");
 
 }
