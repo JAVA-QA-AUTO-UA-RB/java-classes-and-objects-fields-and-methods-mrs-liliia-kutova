@@ -11,19 +11,16 @@ public class Main {
         flash.attackPower=20;
         flash.deffencePower=10;
         flash.health=100;
-        flash.isAlive=true;
 
         ironMan.name="ironMan";
         ironMan.attackPower=15;
         ironMan.deffencePower=5;
         ironMan.health=100;
-        ironMan.isAlive=true;
 
         jackieChan.name="Jackie";
         jackieChan.attackPower=15;
         jackieChan.deffencePower=10;
         jackieChan.health=100;
-        jackieChan.isAlive=true;
 
         System.out.println("Let's the game begin");
 
