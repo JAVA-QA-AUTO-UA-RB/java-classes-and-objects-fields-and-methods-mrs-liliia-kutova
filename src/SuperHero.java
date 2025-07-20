@@ -11,19 +11,19 @@ public class SuperHero {
 
     public Random random = new Random();
 
-    public void attack(SuperHero opponent, int attackStrength) {
+    public void attack(SuperHero opponent, int attackPower) {
         System.out.println("SuperHero " + name + " attacks ");
         int event = random.nextInt(3)+1;
         if (event ==1) {
             int bonusAttack = random.nextInt(6) +1;
         System.out.println("SuperHero " + name + " recives bonus to the attack " + bonusAttack);
-        attackStrength += bonusAttack;
+        attackPower += bonusAttack;
         } else {
             int bonusDefence;
             bonusDefence = random.nextInt(6) + 1;
-         opponent.protectionUsed(bonusDefence);
+         this.attackPower(bonusDefence);
         }
-        opponent.getDamaged(attackStrength);
+        opponent.getDamaged(attackPower);
     }
 
     public void getDamaged(int attackPower) {
