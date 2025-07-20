@@ -8,7 +8,6 @@ public class SuperHero {
     int attackPower;
     int deffencePower;
     int health =100;
-    boolean isAlive=true;
 
     public Random random = new Random();
 
@@ -33,7 +32,6 @@ public class SuperHero {
 
         if (health <=0) {
             health =0;
-            isAlive = false;
             System.out.println("SuperHero " + name + " is dead. The game is over ");
         } else {
             showStats();
