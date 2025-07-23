@@ -13,22 +13,33 @@ public class SuperHero {
 
     public void attack(SuperHero opponent, int attackPower) {
         System.out.println("SuperHero " + name + " attacks ");
+        int modifiedAttack = this.attackPower;
         int event = random.nextInt(3)+1;
         if (event ==1) {
             int bonusAttack = random.nextInt(6) +1;
         System.out.println("SuperHero " + name + " recives bonus to the attack " + bonusAttack);
-        attackPower += bonusAttack;
-        } else {
-            int bonusDefence;
-            bonusDefence = random.nextInt(6) + 1;
-         this.attackPower(bonusDefence);
+        modifiedAttack += bonusAttack;
+        } else if (event ==2){
+          int bonusDefence = random.nextInt(6) + 1;
+         modifiedAttack -= bonusDefence;
+         if (modifiedAttack <0) modifiedAttack =0;
         }
-        opponent.getDamaged(attackPower);
+        opponent.getDamaged(modifiedAttack);
     }
 
     public void getDamaged(int attackPower) {
         System.out.println("SuperHero " + name + " recives " + attackPower + " of damage ");
-        health -= attackPower;
+        int modifiedAttack = attackPower;
+        int event = random.nextInt(3);
+        if (event == 1) {
+            int buff = random.nextInt(6)+1;
+            modifiedAttack -=buff;
+            if (modifiedAttack<0)modifiedAttack=0;
+        } else if (event ==2){
+            int nerf= random.nextInt(6)+1;
+            modifiedAttack +=nerf;
+        }
+        health -= modifiedAttack;
 
         if (health <=0) {
             health =0;
